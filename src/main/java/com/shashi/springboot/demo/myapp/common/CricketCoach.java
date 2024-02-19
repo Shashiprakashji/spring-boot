@@ -1,4 +1,4 @@
-package com.shashi.springboot.demo.myapp;
+package com.shashi.springboot.demo.myapp.common;
 
 import org.springframework.stereotype.Component;
 

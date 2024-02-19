@@ -1,4 +1,4 @@
-package com.shashi.springboot.demo.myapp;
+package com.shashi.springboot.demo.myapp.rest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

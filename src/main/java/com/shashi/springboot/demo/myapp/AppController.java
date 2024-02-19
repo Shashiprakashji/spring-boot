@@ -1,5 +1,6 @@
 package com.shashi.springboot.demo.myapp;
 
+import com.shashi.springboot.demo.myapp.common.Coach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
