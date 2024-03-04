@@ -3,10 +3,13 @@ package com.shashi.springboot.controller;
 
 import com.shashi.springboot.entity.Department;
 import com.shashi.springboot.service.DepartmentService;
+import jakarta.validation.Valid;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 
 //this is for controlling the webpage by writing '/' in the webpage link.
@@ -15,8 +18,10 @@ public class DepartmentController {
     @Autowired
     private DepartmentService departmentService;
 
+    private final Logger Logger=LoggerFactory.getLogger(DepartmentController.class);
+
     @PostMapping("/departments")
-    public Department saveDepartment(@RequestBody Department department){
+    public Department saveDepartment(@Valid @RequestBody Department department){
 
         return departmentService.saveDepartment(department);
     }

@@ -4,12 +4,15 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long departmentId;
+
+    @NotBlank(message = "Please add department name")
     private String departmentName;
     private String departmentAddress;
     private String departmentCode;
