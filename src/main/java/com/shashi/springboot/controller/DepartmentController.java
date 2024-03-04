@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+
+//this is for controlling the webpage by writing '/' in the webpage link.
 @RestController
 public class DepartmentController {
     @Autowired
