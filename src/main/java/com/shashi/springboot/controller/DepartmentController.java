@@ -2,14 +2,16 @@ package com.shashi.springboot.controller;
 
 
 import com.shashi.springboot.entity.Department;
+import com.shashi.springboot.error.DepartmentNotFoundException;
 import com.shashi.springboot.service.DepartmentService;
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.logging.Logger;
+//import java.util.logging.Logger;
 
 
 //this is for controlling the webpage by writing '/' in the webpage link.
@@ -18,10 +20,11 @@ public class DepartmentController {
     @Autowired
     private DepartmentService departmentService;
 
-    private final Logger Logger=LoggerFactory.getLogger(DepartmentController.class);
+    private final Logger Logger=    LoggerFactory.getLogger(DepartmentController.class);
 
     @PostMapping("/departments")
     public Department saveDepartment(@Valid @RequestBody Department department){
+        Logger.info("Inside fetchdepartment");
 
         return departmentService.saveDepartment(department);
     }
@@ -31,7 +34,7 @@ public List<Department> fetchDepartmentList(){
 
 }
 @GetMapping("/departments/{id}")
-    public Department fetchDepartmentById(@PathVariable("id") Long departmentId){
+    public Department fetchDepartmentById(@PathVariable("id") Long departmentId) throws DepartmentNotFoundException {
         return departmentService.fetchDepartmentById(departmentId);
 }
 @DeleteMapping("/departments/{id}")
